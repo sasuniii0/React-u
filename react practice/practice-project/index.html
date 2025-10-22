@@ -391,9 +391,36 @@
     <script src="testimonials.js"></script>
 
     <script type="text/babel">
+
       console.log("Babel");
+
+      const user = {
+        name : "Normal McNormalFace",
+        age: 35,
+        youtubeLink : "https://www.youtube.com/normalcom"
+      };
+
       const NewHeader = () =>{
-        return <h1>Hello from React</h1>
+        let link = `https://www.normal.com`;
+
+        const mySecondFunction = (e) =>{
+          console.log("my event : ")
+          console.log(e.target)
+        }
+
+        return(
+          <>
+          <h1 className = "title">The new Header</h1>{" "}
+            <p>Learn to code by watching others</p>
+            <a href={link}>Learn more...</a>
+
+            <ul>
+              <li>Dynamic User:{user.name.toLocaleUpperCase}</li>  
+              <li>Age: {user.age}</li>
+              <li>Youtube: <a href={user.youtubeLink} className="text-light">Visit Channel</a></li>
+            </ul>
+          </>
+        );
       }
       ReactDOM.render(< NewHeader/>, document.getElementById("header"))
     </script>
